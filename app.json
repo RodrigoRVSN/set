@@ -1,10 +1,12 @@
 {
   "expo": {
-    "name": "set",
+    "name": "SET",
     "slug": "set",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "SET",
+    "githubUrl": "https://github.com/RodrigoRVSN/set"
   }
 }
