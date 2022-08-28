@@ -9,6 +9,7 @@ ___
 - Typescript
 - Styled Components
 - Eslint / Prettier
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) 
 
 ___
 ## 🤺 How to use:
