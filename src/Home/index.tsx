@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Text } from 'react-native'
-import { RectButton } from 'react-native-gesture-handler'
 import * as S from './styles'
 
 export const Home = () => {
@@ -11,11 +10,11 @@ export const Home = () => {
   }
 
   return (
-    <S.Container>
+    <>
       <S.Title>{counter}</S.Title>
-      <RectButton onPress={handleIncrement}>
+      <S.ButtonIncrement onPress={handleIncrement}>
         <Text>Aumentar</Text>
-      </RectButton>
-    </S.Container>
+      </S.ButtonIncrement>
+    </>
   )
 }
