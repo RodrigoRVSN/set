@@ -55,10 +55,6 @@ yarn lint
 yarn lint:fix
 ```
 
-```bash
-bun cy:open
-```
-
 ___
 ## 🤖 Auto-formatting on save:
 
