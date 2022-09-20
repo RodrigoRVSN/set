@@ -25,7 +25,15 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            },
+            {
+                "usePrettierrc": true
+            }
+        ],
         "indent": [
             "error",
             2

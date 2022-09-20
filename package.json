@@ -11,6 +11,7 @@
     "lint:fix": "prettier --write .**/*.{tsx,ts}"
   },
   "dependencies": {
+    "@expo/webpack-config": "^0.17.0",
     "expo": "~46.0.9",
     "expo-splash-screen": "~0.16.2",
     "expo-status-bar": "~1.4.0",
