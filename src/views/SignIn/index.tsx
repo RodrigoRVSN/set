@@ -1,10 +1,11 @@
 import React from 'react'
+import { Text } from 'react-native'
 import * as S from './styles'
 
 export default function SignIn() {
   return (
     <S.MainView>
-      <span>Teste</span>
+      <Text>Testando</Text>
     </S.MainView>
   )
 }
