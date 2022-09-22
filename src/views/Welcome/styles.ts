@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#38A69D',
   },
   containerLogo: {
-    flex: 2,
+    flex: 1,
     backgroundColor: '#38A69D',
     justifyContent: 'center',
     alignItems: 'center',
@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
     borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
     paddingStart: '5%',
     paddingEnd: '5%',
   },

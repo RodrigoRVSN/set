@@ -35,12 +35,13 @@ export const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#38A69D',
-    width: '100%',
-    borderRadius: 4,
+    width: '40%',
+    borderRadius: 10,
     paddingVertical: 8,
-    marginTop: 14,
+    marginTop: 40,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    alignSelf: 'center'
   },
   buttonText: {
     color: '#FFF',

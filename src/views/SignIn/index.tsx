@@ -18,7 +18,7 @@ export default function SignIn() {
         <TextInput placeholder='Digite uma senha' style={styles.input} />
 
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Acessar</Text>
+          <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
       </Animatable.View>
     </View>

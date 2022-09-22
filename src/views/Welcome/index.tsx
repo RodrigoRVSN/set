@@ -9,7 +9,7 @@ export default function Welcome() {
   const navigation = useNavigation<any>()
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.containerLogo}>
         <Animatable.Image
           animation='flipInY'
           source={require('../../assets/images/logo.png')}
