@@ -1,20 +1,28 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
+import * as Animatable from 'react-native-animatable'
 import { styles } from './styles'
 
 export default function Welcome() {
+  const navigation = useNavigation<any>()
   return (
     <View style={styles.container}>
       <View>
-        <Image
+        <Animatable.Image
+          animation='flipInY'
           source={require('../../assets/images/logo.png')}
           style={{ width: '100%' }}
           resizeMode='contain'
         />
       </View>
 
-      <View style={styles.containerForm}>
+      <Animatable.View
+        delay={600}
+        animation='fadeInUp'
+        style={styles.containerForm}
+      >
         <Text style={styles.title}>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         </Text>
@@ -24,10 +32,13 @@ export default function Welcome() {
           reprehenderit unde!
         </Text>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('SignIn')}
+        >
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
-      </View>
+      </Animatable.View>
     </View>
   )
 }
