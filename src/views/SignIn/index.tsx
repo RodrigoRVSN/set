@@ -11,7 +11,7 @@ type FormData = {
 }
 
 export default function SignIn() {
-  const { control, handleSubmit } = useForm<FormData>()
+  const { control, handleSubmit, formState: { errors } } = useForm<FormData>()
   const { signed, signIn } = useAuth()
 
   const handleSignIn = (data: FormData) => {
@@ -29,23 +29,28 @@ export default function SignIn() {
         <Text style={styles.title}>Email</Text>
         <Controller
           control={control}
+          rules={{ required: true }}
           name='email'
           render={({ field: { value, onChange } }) => (
             <TextInput
               placeholder='Digite seu email'
+              autoCapitalize='none'
               style={styles.input}
               value={value}
               onChangeText={onChange}
             />
           )}
         />
+        {errors?.email && <Text style={styles.errorText}>Email obrigatório!</Text>}
         <Text style={styles.title}>Senha</Text>
         <Controller
           control={control}
+          rules={{ required: true }}
           name='password'
           render={({ field: { value, onChange } }) => (
             <TextInput
               placeholder='Digite sua senha'
+              autoCapitalize='none'
               secureTextEntry
               style={styles.input}
               value={value}
@@ -53,6 +58,7 @@ export default function SignIn() {
             />
           )}
         />
+        {errors?.password && <Text style={styles.errorText}>Senha obrigatória!</Text>}
 
         <TouchableOpacity style={styles.button}>
           <Text

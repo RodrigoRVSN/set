@@ -47,5 +47,8 @@ export const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 18,
     fontWeight: 'bold'
+  },
+  errorText: {
+    color: 'red'
   }
 })
