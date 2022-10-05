@@ -3,16 +3,22 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import { useAuth } from '../../contexts/auth'
 import { styles } from './styles'
+import { Controller, useForm } from 'react-hook-form'
+
+type FormData = {
+  email: string,
+  password: string
+}
 
 export default function SignIn() {
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
+  const { control, handleSubmit } = useForm<FormData>()
   const { signed, signIn } = useAuth()
 
-  function handleSignIn() {
-    if (email !== '' && password !== '') signIn(email, password)
+  const handleSignIn = (data: FormData) => {
+    const { email, password } = data
+    if (email && password) signIn(email, password)
   }
-  
+
   return (
     <View style={styles.container}>
       <Animatable.View style={styles.containerHeader} animation='fadeInLeft' delay={500}>
@@ -21,24 +27,37 @@ export default function SignIn() {
 
       <Animatable.View style={styles.containerForm} animation='fadeInUp' delay={500}>
         <Text style={styles.title}>Email</Text>
-        <TextInput
-          placeholder='Digite um email'
-          style={styles.input}
-          onChangeText={(item) => setEmail(item)}
+        <Controller
+          control={control}
+          name='email'
+          render={({ field: { value, onChange } }) => (
+            <TextInput
+              placeholder='Digite seu email'
+              style={styles.input}
+              value={value}
+              onChangeText={onChange}
+            />
+          )}
         />
-
         <Text style={styles.title}>Senha</Text>
-        <TextInput
-          placeholder='Digite uma senha'
-          style={styles.input}
-          onChangeText={(item) => setPassword(item)}
-          secureTextEntry
+        <Controller
+          control={control}
+          name='password'
+          render={({ field: { value, onChange } }) => (
+            <TextInput
+              placeholder='Digite sua senha'
+              secureTextEntry
+              style={styles.input}
+              value={value}
+              onChangeText={onChange}
+            />
+          )}
         />
 
         <TouchableOpacity style={styles.button}>
           <Text
             style={styles.buttonText}
-            onPress={handleSignIn}
+            onPress={handleSubmit(handleSignIn)}
           >Login
           </Text>
         </TouchableOpacity>
