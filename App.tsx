@@ -1,16 +1,16 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { Home } from './src/Home'
-import { Container } from './src/Home/styles'
+import { StatusBar } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import Routes from './src/routes/routes'
+import { AuthProvider } from './src/contexts/auth'
 
 export default function App() {
   return (
-    <Container>
-      <GestureHandlerRootView>
-        <Home />
-        <StatusBar style='auto' />
-      </GestureHandlerRootView>
-    </Container>
+    <NavigationContainer>
+      <StatusBar backgroundColor='#38A69D' barStyle='light-content' />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
+    </NavigationContainer>
   )
 }
