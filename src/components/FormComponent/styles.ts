@@ -1,54 +1,30 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
+
+const deviceWidth = Dimensions.get('window').width
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#38A69D',
-  },
-  containerHeader: {
-    marginTop: '14%',
-    marginBottom: '8%',
-    paddingStart: '5%',
-  },
-  containerForm: {
-    backgroundColor: '#FFF',
-    flex: 1,
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-    paddingStart: '5%',
-    paddingEnd: '5%',
-  },
-  message: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#FFF',
-  },
-  title: {
-    fontSize: 20,
-    marginTop: 28,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   input: {
+    borderTopWidth: 1,
+    borderRightWidth: 1,
     borderBottomWidth: 1,
+    borderLeftWidth: 1,
     height: 40,
+    width: deviceWidth / 2,
     marginBottom: 12,
     fontSize: 16,
   },
   button: {
-    backgroundColor: '#38A69D',
-    width: '40%',
+    width: deviceWidth / 2,
     borderRadius: 10,
     paddingVertical: 8,
     marginTop: 40,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-  },
-  buttonText: {
-    color: '#FFF',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  errorText: {
-    color: 'red',
   },
 })
