@@ -5,13 +5,17 @@ import { useAuth } from '../../contexts/auth'
 import { styles } from './styles'
 import { Controller, useForm } from 'react-hook-form'
 
-type FormData = {
-  email: string,
+interface FormData {
+  email: string
   password: string
 }
 
 export default function SignIn() {
-  const { control, handleSubmit, formState: { errors } } = useForm<FormData>()
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>()
   const { signed, signIn } = useAuth()
 
   const handleSignIn = (data: FormData) => {
@@ -21,11 +25,19 @@ export default function SignIn() {
 
   return (
     <View style={styles.container}>
-      <Animatable.View style={styles.containerHeader} animation='fadeInLeft' delay={500}>
+      <Animatable.View
+        style={styles.containerHeader}
+        animation='fadeInLeft'
+        delay={500}
+      >
         <Text style={styles.message}>Bem-vindo(a)</Text>
       </Animatable.View>
 
-      <Animatable.View style={styles.containerForm} animation='fadeInUp' delay={500}>
+      <Animatable.View
+        style={styles.containerForm}
+        animation='fadeInUp'
+        delay={500}
+      >
         <Text style={styles.title}>Email</Text>
         <Controller
           control={control}
@@ -41,7 +53,9 @@ export default function SignIn() {
             />
           )}
         />
-        {errors?.email && <Text style={styles.errorText}>Email obrigatório!</Text>}
+        {errors?.email && (
+          <Text style={styles.errorText}>Email obrigatório!</Text>
+        )}
         <Text style={styles.title}>Senha</Text>
         <Controller
           control={control}
@@ -58,13 +72,13 @@ export default function SignIn() {
             />
           )}
         />
-        {errors?.password && <Text style={styles.errorText}>Senha obrigatória!</Text>}
+        {errors?.password && (
+          <Text style={styles.errorText}>Senha obrigatória!</Text>
+        )}
 
         <TouchableOpacity style={styles.button}>
-          <Text
-            style={styles.buttonText}
-            onPress={handleSubmit(handleSignIn)}
-          >Login
+          <Text style={styles.buttonText} onPress={handleSubmit(handleSignIn)}>
+            Login
           </Text>
         </TouchableOpacity>
       </Animatable.View>
