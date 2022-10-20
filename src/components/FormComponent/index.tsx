@@ -22,11 +22,7 @@ export default function FormComponent({ fields, type }: IFormComponent) {
   const [loadedFields, setLoadedFields] = useState()
 
   const onSubmit = (data: FormData) => {
-    try {
-      console.log(data)
-    } catch (error) {
-      console.log(error)
-    }
+    console.log(data)
   }
 
   return (
