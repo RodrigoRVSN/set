@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, TextInput, Button } from 'react-native'
+import { View, TextInput, Button, Text } from 'react-native'
 import { Controller, useForm } from 'react-hook-form'
 import { styles } from './styles'
 
@@ -9,15 +9,16 @@ interface IFields {
 }
 
 interface IFormComponent {
-  fields: IFields[]
+  label: string
   type: string
+  errorMessage: string
 }
 
 interface FormData {
   [key: string]: unknown
 }
 
-export default function FormComponent({ fields, type }: IFormComponent) {
+export default function FormComponent({ label, errorMessage, type }: IFormComponent) {
   const { control, handleSubmit } = useForm()
   const [loadedFields, setLoadedFields] = useState()
 
@@ -26,25 +27,25 @@ export default function FormComponent({ fields, type }: IFormComponent) {
   }
 
   return (
-    <View style={styles.container}>
-      {fields.map((field: IFields) => (
-        <Controller
-          defaultValue={loadedFields && loadedFields[field.name]}
-          key={field.name}
-          control={control}
-          name={field.name}
-          render={({ field: { value, onChange } }) => (
-            <TextInput
-              placeholder={field.placeholder}
-              autoCapitalize='none'
-              style={styles.input}
-              value={value as string}
-              onChangeText={onChange}
-            />
-          )}
-        />
-      ))}
-      <Button color='black' title='Enviar' onPress={handleSubmit(onSubmit)} />
-    </View>
+    <>
+      <Text>{label}</Text>
+      <Controller
+        control={control}
+        rules={{ required: true }}
+        name='password'
+        render={({ field: { value, onChange } }) => (
+          <TextInput
+            placeholder='Digite sua senha'
+            autoCapitalize='none'
+            secureTextEntry
+            value={value}
+            onChangeText={onChange}
+          />
+        )}
+      />
+      {errorMessage && (
+        <Text>{label} obrigatória!</Text>
+      )}
+    </>
   )
 }
