@@ -14,7 +14,6 @@ export default function SignIn({ navigation }) {
   const {
     control,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<FormData>()
   const { signIn } = useAuth()

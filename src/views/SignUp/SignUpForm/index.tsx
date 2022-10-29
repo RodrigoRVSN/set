@@ -17,7 +17,6 @@ export const SignUpForm = ({ goToLogin, handleSignUp }: SignUpFormProps) => {
     handleSubmit,
     formState: { errors, isValid, isDirty },
   } = useForm<SignUpType>()
-  console.log({isValid, isDirty})
 
   return (
     <>
