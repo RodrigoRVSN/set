@@ -17,6 +17,7 @@ export const SignUpForm = ({ goToLogin, handleSignUp }: SignUpFormProps) => {
     handleSubmit,
     formState: { errors, isValid, isDirty },
   } = useForm<SignUpType>()
+  console.log({isValid, isDirty})
 
   return (
     <>
@@ -118,7 +119,7 @@ export const SignUpForm = ({ goToLogin, handleSignUp }: SignUpFormProps) => {
         <Text style={styles.errorText}>Cargo obrigatório!</Text>
       )}
 
-      <TouchableOpacity style={styles.button} disabled={!isValid || !isDirty} onPress={handleSubmit(handleSignUp)}>
+      <TouchableOpacity style={styles.button} disabled={!isValid && !isDirty} onPress={handleSubmit(handleSignUp)}>
         <Text style={styles.buttonText} >
           Registrar
         </Text>

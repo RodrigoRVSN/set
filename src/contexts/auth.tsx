@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
   async function signIn(email: string, password: string): Promise<void> {
     try {
       const response = await auth.signIn(email, password)
-      setUser(response.user)
+      setUser(response)
       // await AsyncStorage.setItem('@SETAuth:user', JSON.stringify(response.user))
     } catch (error) {
       console.log(error)

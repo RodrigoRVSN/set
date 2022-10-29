@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'http://localhost:4444'
+  baseURL: 'https://set-api-production.up.railway.app'
 })
 
 export default api

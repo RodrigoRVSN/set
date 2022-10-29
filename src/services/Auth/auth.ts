@@ -18,6 +18,6 @@ export async function signUp (body: SignUpType) {
     const { data } = await api.post('/user/register', body);
     return data;
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 }
