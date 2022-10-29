@@ -1,7 +1,10 @@
 import styled from 'styled-components/native'
 import { View } from 'react-native-animatable'
+import { Dimensions } from 'react-native'
 
-export const Container = styled.ScrollView`
+const height = Dimensions.get('screen').height * 0.8
+
+export const Container = styled.View`
   background-color: #38A69D;
   flex: 1;
 `
@@ -21,6 +24,6 @@ export const ContainerForm = styled(View)`
   background-color: #FFF;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
-  flex: 1;
+  min-height: ${height}px;
   padding: 24px;
 `

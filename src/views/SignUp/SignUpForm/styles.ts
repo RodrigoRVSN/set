@@ -38,5 +38,6 @@ export const styles = StyleSheet.create({
 })
 
 export const selectButton = {
+  marginTop: 8,
   width: '100%'
 }

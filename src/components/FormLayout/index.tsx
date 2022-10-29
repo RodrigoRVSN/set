@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react"
+import { ScrollView } from "react-native"
 import * as S from './styles'
 
 interface FormLayoutProps {
@@ -7,22 +8,23 @@ interface FormLayoutProps {
 }
 
 export const FormLayout = ({ message, children }: FormLayoutProps) => {
-
   return (
-    <S.Container>
-      <S.ContainerHeader
-        animation='fadeInLeft'
-        delay={500}
-      >
-        <S.Message>{message}</S.Message>
-      </S.ContainerHeader>
+    <ScrollView>
+      <S.Container>
+        <S.ContainerHeader
+          animation='fadeInLeft'
+          delay={500}
+        >
+          <S.Message>{message}</S.Message>
+        </S.ContainerHeader>
 
-      <S.ContainerForm
-        animation='fadeInUp'
-        delay={500}
-      >
-        {children}
-      </S.ContainerForm>
-    </S.Container>
+        <S.ContainerForm
+          animation='fadeInUp'
+          delay={500}
+        >
+          {children}
+        </S.ContainerForm>
+      </S.Container>
+    </ScrollView>
   )
 }
