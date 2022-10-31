@@ -54,6 +54,10 @@
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/semi": "off",
         "@typescript-eslint/space-before-function-paren": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/prefer-optional-chain": "off",
+        "@typescript-eslint/unbound-method": "off",
+        "@typescript-eslint/no-floating-promises": "off",
         "comma-dangle": ["error", "only-multiline"]
     },
     "settings": {
