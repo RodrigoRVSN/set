@@ -1,3 +1,15 @@
+# Integrantes do projeto SET
+
+[Link do back-end em que foi desenvolvida a API](https://github.com/RodrigoRVSN/set-api)
+
+- 200897 Rodrigo Victor da Silva Nascimento
+- 200067 Antônio Nery Lopes Neto
+- 200320 Gabriel Bueno Machado
+- 200131 Gabriel Messias da Silva
+- 200318 Gianluca Bueno Machado Ribeiro
+- 190056 Leonardo Poveda Mayoral
+- 200032 Natanael Felipe Garcia
+
 # 📙 University project of sustainability
 
 <br>
