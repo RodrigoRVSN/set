@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { commonStyles } from '../../../Styles/commonStyles'
 
 export const styles = StyleSheet.create({
   title: {
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
   button: {
-    backgroundColor: '#38A69D',
+    backgroundColor: commonStyles.primaryColor,
     width: '40%',
     borderRadius: 10,
     paddingVertical: 8,
@@ -22,12 +23,12 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   buttonText: {
-    color: '#FFF',
+    color: commonStyles.secondaryColor,
     fontSize: 18,
     fontWeight: 'bold',
   },
   registerButton: {
-    color: '#38A69D',
+    color: commonStyles.primaryColor,
     fontSize: 14,
     marginTop: 16,
     alignSelf: 'center'

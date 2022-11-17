@@ -1,11 +1,12 @@
 import styled from 'styled-components/native'
 import { View } from 'react-native-animatable'
 import { Dimensions } from 'react-native'
+import { commonStyles } from '../../Styles/commonStyles'
 
-const height = Dimensions.get('screen').height * 0.8
+const height = Dimensions.get('screen').height
 
 export const Container = styled.View`
-  background-color: #38A69D;
+  background-color: ${commonStyles.primaryColor};
   flex: 1;
 `
 
@@ -17,11 +18,11 @@ export const ContainerHeader = styled(View)`
 export const Message = styled.Text`
   font-size: 28px;
   font-weight: bold;
-  color: #FFF;
+  color: ${commonStyles.secondaryColor};
 `
 
 export const ContainerForm = styled(View)`
-  background-color: #FFF;
+  background-color: ${commonStyles.secondaryColor};
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   min-height: ${height}px;

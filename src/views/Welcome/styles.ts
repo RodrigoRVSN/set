@@ -1,19 +1,20 @@
 import { StyleSheet } from 'react-native'
+import { commonStyles } from '../../Styles/commonStyles'
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#38A69D',
+    backgroundColor: commonStyles.primaryColor,
   },
   containerLogo: {
     flex: 1,
-    backgroundColor: '#38A69D',
+    backgroundColor: commonStyles.primaryColor,
     justifyContent: 'center',
     alignItems: 'center',
   },
   containerForm: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: commonStyles.secondaryColor,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     paddingStart: '5%',
@@ -30,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   button: {
     position: 'absolute',
-    backgroundColor: '#38A69D',
+    backgroundColor: commonStyles.primaryColor,
     borderRadius: 50,
     paddingVertical: 8,
     width: '60%',
@@ -41,7 +42,7 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    color: '#FFF',
+    color: commonStyles.secondaryColor,
     fontWeight: 'bold',
   },
 })
