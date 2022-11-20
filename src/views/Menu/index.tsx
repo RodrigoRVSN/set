@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import * as Animatable from 'react-native-animatable'
@@ -7,6 +8,8 @@ import { menuOptions } from "./constants";
 import { styles } from "./styles";
 
 export default function Menu() {
+  const navigation = useNavigation<any>()
+
   return (
     <Animatable.View
       style={styles.mainContainer}
@@ -23,7 +26,12 @@ export default function Menu() {
           data={menuOptions}
           renderItem={({ item }) => (
             <View style={styles.card}>
-              <Text style={styles.cardText}>{item.name}</Text>
+              <Text
+                style={styles.cardText}
+                onPress={() => navigation.navigate(item.route)}
+              >
+                {item.name}
+              </Text>
             </View>
           )}
         />
