@@ -7,7 +7,18 @@ const deviceHeight = Dimensions.get('window').height
 export const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: commonStyles.primaryColor,
-    height: '100%',
-    width: '100%',
+    height: deviceHeight,
+    width: deviceWidth,
+    padding: 10
   },
+  title: {
+    marginVertical: 10,
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: commonStyles.secondaryColor
+  },
+  text: {
+    fontSize: 16,
+    color: commonStyles.secondaryColor
+  }
 })
