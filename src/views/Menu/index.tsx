@@ -4,11 +4,13 @@ import { View, Text, FlatList } from "react-native";
 import * as Animatable from 'react-native-animatable'
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Header from "../../components/Header";
+import { useAuth } from "../../contexts/auth";
 import { menuOptions } from "./constants";
 import { styles } from "./styles";
 
 export default function Menu() {
   const navigation = useNavigation<any>()
+  const { signOut } = useAuth()
 
   return (
     <Animatable.View
@@ -37,7 +39,12 @@ export default function Menu() {
         />
       </View>
       <TouchableOpacity style={styles.logoutButton}>
-        <Text style={styles.logoutButtonText}>Sair</Text>
+        <Text
+          style={styles.logoutButtonText}
+          onPress={() => signOut()}
+        >
+          Sair
+        </Text>
       </TouchableOpacity>
     </Animatable.View>
   )
