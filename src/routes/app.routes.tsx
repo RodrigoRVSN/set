@@ -13,6 +13,7 @@ const AppRoutes: React.FC = () => (
     <AppStack.Screen name='Menu' options={{ headerShown: false }} component={Menu} />
     <AppStack.Screen name='Dashboard' component={Dashboard} />
     <AppStack.Screen name='Condomínios' component={Condominiums} />
+    <AppStack.Screen name='Registrar Condomínio' component={Condominiums} />
     <AppStack.Screen name='Síndicos' component={Syndicates} />
     <AppStack.Screen name='Sobre' component={About} />
   </AppStack.Navigator>
