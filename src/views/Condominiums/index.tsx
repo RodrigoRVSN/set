@@ -35,14 +35,21 @@ export default function Condominiums() {
   }, [update, navigation])
 
   return (
-    <>
-      <Animatable.View style={{ ...styles.mainContainer, justifyContent: loading || !allCondominiums ? 'center' : 'flex-start' }}>
+    <View style={{ backgroundColor: commonStyles.primaryColor }}>
 
-        <TouchableOpacity style={styles.registerButton}>
-          <Feather name='plus' size={25} color={commonStyles.primaryColor}/>
+
+      <Animatable.View
+        delay={600}
+        animation='fadeInUp'
+        style={{ ...styles.mainContainer, justifyContent: loading || !allCondominiums ? 'center' : 'flex-start' }}
+      >
+        <TouchableOpacity
+          style={styles.registerButton}
+          onPress={() => navigation.navigate('Registrar Condomínio')}
+        >
+          <Feather name='plus' size={25} color={commonStyles.primaryColor} />
           <Text
             style={styles.registerButtonText}
-            onPress={() => navigation.navigate('Registrar Condomínio')}
           >
             Condomínio
           </Text>
@@ -66,6 +73,6 @@ export default function Condominiums() {
             : <Text style={{ alignSelf: 'center', color: '#FFFFFF' }}>Não há dados!</Text>
         }
       </Animatable.View>
-    </>
+    </View>
   )
 }
