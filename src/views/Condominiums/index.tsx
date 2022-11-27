@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, ActivityIndicator, FlatList } from "react-native";
+import { Feather } from '@expo/vector-icons'
 import * as Animatable from 'react-native-animatable'
 import { commonStyles } from "../../Styles/commonStyles";
 import { styles } from "./styles";
@@ -38,11 +39,12 @@ export default function Condominiums() {
       <Animatable.View style={{ ...styles.mainContainer, justifyContent: loading || !allCondominiums ? 'center' : 'flex-start' }}>
 
         <TouchableOpacity style={styles.registerButton}>
+          <Feather name='plus' size={25} color={commonStyles.primaryColor}/>
           <Text
             style={styles.registerButtonText}
             onPress={() => navigation.navigate('Registrar Condomínio')}
           >
-            Registrar Condomínio
+            Condomínio
           </Text>
         </TouchableOpacity>
 

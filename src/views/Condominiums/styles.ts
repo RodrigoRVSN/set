@@ -14,7 +14,9 @@ export const styles = StyleSheet.create({
   registerButton: {
     width: deviceWidth * 0.5,
     height: deviceHeight * 0.05,
-    justifyContent: 'center',
+    padding: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     backgroundColor: commonStyles.secondaryColor,
     borderTopLeftRadius: 20,
@@ -27,7 +29,7 @@ export const styles = StyleSheet.create({
     top: 0
   },
   registerButtonText: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     color: commonStyles.primaryColor
   },
