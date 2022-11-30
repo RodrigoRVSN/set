@@ -27,12 +27,18 @@ export default function CondominiumRegister() {
   const [update, setUpdate] = useState<boolean>()
   const navigation = useNavigation<any>()
 
+  const redirectToList = () => {
+    navigation.navigate('Condomínios')
+  }
+
   async function handleCreate(data: condominiumRegisterType) {
     if (!data) return
-
     try {
       const response = await condominiums.create(data)
-      if (response) console.log('Síndico cadastrado com sucesso!')
+      if (response) {
+        console.log('Síndico cadastrado com sucesso!')
+        redirectToList()
+      }
     } catch (error) {
       console.log(error)
     }
@@ -95,7 +101,7 @@ export default function CondominiumRegister() {
         name='syndicateId'
         render={({ field: { onChange } }) => (
           <Select
-            defaultButtonText='Escolher um cargo'
+            defaultButtonText='Selecionar Síndico'
             data={allSyndicates}
             buttonStyle={{ ...selectButton }}
             onSelect={({ name }) => onChange(name)}
