@@ -12,7 +12,7 @@ export const condominiums = {
   },
   create: async (data: condominiumRegisterType) => {
     try {
-      const response = await api.post('/condominium/create')
+      const response = await api.post('/condominium/create', data)
       return response.data
     } catch (error) {
       console.log(error)

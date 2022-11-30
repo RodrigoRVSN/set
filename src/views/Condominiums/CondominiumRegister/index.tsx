@@ -36,7 +36,7 @@ export default function CondominiumRegister() {
     try {
       const response = await condominiums.create(data)
       if (response) {
-        console.log('Síndico cadastrado com sucesso!')
+        console.log('Condomínio cadastrado com sucesso!')
         redirectToList()
       }
     } catch (error) {
@@ -66,7 +66,7 @@ export default function CondominiumRegister() {
         name='name'
         render={({ field: { value, onChange } }) => (
           <TextInput
-            placeholder='Digite seu nome'
+            placeholder='Digite o nome do condomínio'
             style={styles.input}
             value={value}
             onChangeText={onChange}

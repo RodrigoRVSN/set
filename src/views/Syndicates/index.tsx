@@ -11,6 +11,10 @@ export interface ISyndicates {
   name: string
 }
 
+export type syndicateRegisterType = {
+  name: string,
+}
+
 export default function Syndicates() {
   const [update, setUpdate] = useState<boolean>()
   const [loading, setLoading] = useState<boolean>()
