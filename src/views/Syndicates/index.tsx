@@ -7,7 +7,7 @@ import { commonStyles } from "../../Styles/commonStyles";
 import { styles } from "./styles";
 import { syndicates } from "./consumer";
 
-interface ISyndicates {
+export interface ISyndicates {
   name: string
 }
 
