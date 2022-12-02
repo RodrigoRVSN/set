@@ -11,4 +11,37 @@ export const styles = StyleSheet.create({
     width: '100%',
     padding: 20
   },
+  title: {
+    fontSize: 20,
+    marginTop: 28,
+  },
+  input: {
+    borderBottomWidth: 1,
+    height: 40,
+    marginBottom: 12,
+    fontSize: 16,
+  },
+  errorText: {
+    color: 'red',
+  },
+  buttonText: {
+    color: commonStyles.secondaryColor,
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  button: {
+    backgroundColor: commonStyles.primaryColor,
+    width: '40%',
+    borderRadius: 10,
+    paddingVertical: 8,
+    marginTop: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
 })
+
+export const selectButton = {
+  marginTop: 8,
+  width: '100%'
+}

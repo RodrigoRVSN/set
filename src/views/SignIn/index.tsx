@@ -68,12 +68,6 @@ export default function SignIn({ navigation }) {
           Login
         </Text>
       </TouchableOpacity>
-
-      <TouchableOpacity>
-        <Text style={styles.registerButton} onPress={() => navigation.navigate('SignUp')}>
-          Não possui uma conta?
-        </Text>
-      </TouchableOpacity>
     </FormLayout>
   )
 }
