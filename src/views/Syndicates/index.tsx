@@ -62,7 +62,13 @@ export default function Syndicates() {
                   data={allSyndicates}
                   renderItem={({ item }) => (
                     <View style={styles.card}>
-                      <Text style={styles.text}>Nome: {item.name}</Text>
+                      <View>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Nome: </Text> {item.name}</Text>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Email: </Text> {item.email}</Text>
+                      </View>
+                      <View>
+                        <Feather name='user' size={70} color={commonStyles.primaryColor} />
+                      </View>
                     </View>
                   )}
                 />

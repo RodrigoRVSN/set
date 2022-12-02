@@ -61,7 +61,14 @@ export default function Condominiums() {
                   data={allCondominiums}
                   renderItem={({ item }) => (
                     <View style={styles.card}>
-                      <Text style={styles.text}>Nome: {item.name}</Text>
+                      <View>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Nome: </Text> {item.name}</Text>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Endereço: </Text> {item.address}</Text>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Síndico: </Text> {item.syndicateId}</Text>
+                      </View>
+                      <View>
+                        <Feather name='home' size={70} color={commonStyles.primaryColor} />
+                      </View>
                     </View>
                   )}
                 />
