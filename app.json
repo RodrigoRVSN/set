@@ -7,6 +7,11 @@
       "**/*"
     ],
     "description": "SET",
-    "githubUrl": "https://github.com/RodrigoRVSN/set"
+    "githubUrl": "https://github.com/RodrigoRVSN/set",
+    "extra": {
+      "eas": {
+        "projectId": "31034348-5c97-49b3-9494-d7d709e88340"
+      }
+    }
   }
 }
