@@ -34,15 +34,17 @@ export const styles = StyleSheet.create({
     color: commonStyles.primaryColor
   },
   text: {
-    alignSelf: 'flex-start'
+    maxWidth: '75%',
+    alignSelf: 'flex-start',
+    marginVertical: 4
   },
   flatlist: {
     paddingVertical: 40,
     top: 60
   },
   card: {
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
     width: '100%',

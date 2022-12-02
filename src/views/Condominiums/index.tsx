@@ -11,7 +11,7 @@ import ICondominium from "./types";
 export default function Condominiums() {
   const [update, setUpdate] = useState<boolean>()
   const [loading, setLoading] = useState<boolean>()
-  const [allCondominiums, setAllCondominiums] = useState<ICondominium[]>()
+  const [allCondominiums, setAllCondominiums] = useState<ICondominium[]>([])
   const navigation = useNavigation<any>()
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function Condominiums() {
       <Animatable.View
         delay={600}
         animation='fadeInUp'
-        style={{ ...styles.mainContainer, justifyContent: loading || !allCondominiums ? 'center' : 'flex-start' }}
+        style={{ ...styles.mainContainer, justifyContent: loading || !allCondominiums.length ? 'center' : 'flex-start' }}
       >
         <TouchableOpacity
           style={styles.registerButton}
@@ -61,7 +61,14 @@ export default function Condominiums() {
                   data={allCondominiums}
                   renderItem={({ item }) => (
                     <View style={styles.card}>
-                      <Text style={styles.text}>Nome: {item.name}</Text>
+                      <View>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Nome: </Text> {item.name}</Text>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Endereço: </Text> {item.address}</Text>
+                        <Text style={styles.text}><Text style={{fontWeight: 'bold'}}>Síndico: </Text> {item.syndicateId}</Text>
+                      </View>
+                      <View>
+                        <Feather name='home' size={70} color={commonStyles.primaryColor} />
+                      </View>
                     </View>
                   )}
                 />

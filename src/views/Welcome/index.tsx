@@ -24,12 +24,10 @@ export default function Welcome() {
         style={styles.containerForm}
       >
         <Text style={styles.title}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Bem-Vindo(a) ao SET - Solar Energy Tracking
         </Text>
         <Text style={styles.text}>
-          Ut et quam rem vero odit consequatur esse enim sint possimus dolorem,
-          provident architecto incidunt, hic fugit repellat laborum laboriosam
-          reprehenderit unde!
+          Aqui você poderá cadastrar e visualizar informações sobre condomínios e síndicos, assim como as estatísticas de geração de energia solar.
         </Text>
 
         <TouchableOpacity
