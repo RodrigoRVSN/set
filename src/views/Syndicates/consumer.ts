@@ -1,5 +1,6 @@
+
 import api from "../../services/Api/api";
-import { syndicateRegisterType } from "./SyndicateRegister";
+import ISyndicate from "./types";
 
 export const syndicates = {
   get: async () => {
@@ -10,9 +11,9 @@ export const syndicates = {
       console.log(error)
     }
   },
-  create: async (data: syndicateRegisterType) => {
+  create: async (data: ISyndicate ) => {
     try {
-      const response = await api.post('/user/register', data)
+      const response = await api.post('/user/register', {...data, role:'SYNDICATE'})
       return response.data
     } catch (error) {
       console.log(error)

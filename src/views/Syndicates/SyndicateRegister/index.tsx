@@ -6,26 +6,23 @@ import { commonStyles } from "../../../Styles/commonStyles";
 import { styles } from "./styles";
 import { syndicates } from "../consumer";
 import { Controller, useForm } from "react-hook-form";
+import ISyndicate from "../types";
 
-export type syndicateRegisterType = {
-  name: string,
-}
 
 export default function SyndicateRegister() {
   const {
     control,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-  } = useForm<syndicateRegisterType>()
+  } = useForm<ISyndicate>()
 
-  const [update, setUpdate] = useState<boolean>()
   const navigation = useNavigation<any>()
 
   const redirectToList = () => {
     navigation.navigate('Síndicos')
   }
 
-  async function handleCreate(data: syndicateRegisterType) {
+  async function handleCreate(data: ISyndicate) {
     if (!data) return
     try {
       const response = await syndicates.create(data)
@@ -55,6 +52,42 @@ export default function SyndicateRegister() {
       />
       {errors?.name && (
         <Text style={styles.errorText}>Nome obrigatório!</Text>
+      )}
+
+      <Text style={styles.title}>Email</Text>
+      <Controller
+        control={control}
+        rules={{ required: true }}
+        name='email'
+        render={({ field: { value, onChange } }) => (
+          <TextInput
+            placeholder='Digite o email do síndico'
+            style={styles.input}
+            value={value}
+            onChangeText={onChange}
+          />
+        )}
+      />
+      {errors?.email && (
+        <Text style={styles.errorText}>Email obrigatório!</Text>
+      )}
+
+      <Text style={styles.title}>Senha</Text>
+      <Controller
+        control={control}
+        rules={{ required: true }}
+        name='password'
+        render={({ field: { value, onChange } }) => (
+          <TextInput
+            placeholder='Digite a senha'
+            style={styles.input}
+            value={value}
+            onChangeText={onChange}
+          />
+        )}
+      />
+      {errors?.password && (
+        <Text style={styles.errorText}>Senha obrigatória!</Text>
       )}
 
       <TouchableOpacity style={styles.button} disabled={!isValid && !isDirty} onPress={handleSubmit(handleCreate)}>

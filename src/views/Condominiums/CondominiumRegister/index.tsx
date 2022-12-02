@@ -9,19 +9,14 @@ import { Controller, useForm } from "react-hook-form";
 import Select from 'react-native-select-dropdown'
 import { syndicates } from "../../Syndicates/consumer";
 import { ISyndicates } from "../../Syndicates";
-
-export type condominiumRegisterType = {
-  name: string,
-  address: string,
-  syndicateId: string
-}
+import ICondominium from "../types";
 
 export default function CondominiumRegister() {
   const {
     control,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-  } = useForm<condominiumRegisterType>()
+  } = useForm<ICondominium>()
 
   const [allSyndicates, setAllSyndicates] = useState<ISyndicates[]>()
   const [update, setUpdate] = useState<boolean>()
@@ -31,7 +26,7 @@ export default function CondominiumRegister() {
     navigation.navigate('Condomínios')
   }
 
-  async function handleCreate(data: condominiumRegisterType) {
+  async function handleCreate(data: ICondominium) {
     if (!data) return
     try {
       const response = await condominiums.create(data)

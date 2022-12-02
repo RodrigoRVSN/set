@@ -6,10 +6,7 @@ import * as Animatable from 'react-native-animatable'
 import { commonStyles } from "../../Styles/commonStyles";
 import { styles } from "./styles";
 import { condominiums } from "./consumer";
-
-interface ICondominium {
-  name: string
-}
+import ICondominium from "./types";
 
 export default function Condominiums() {
   const [update, setUpdate] = useState<boolean>()

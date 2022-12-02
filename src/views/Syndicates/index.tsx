@@ -6,19 +6,13 @@ import * as Animatable from 'react-native-animatable'
 import { commonStyles } from "../../Styles/commonStyles";
 import { styles } from "./styles";
 import { syndicates } from "./consumer";
+import ISyndicate from "./types";
 
-export interface ISyndicates {
-  name: string
-}
-
-export type syndicateRegisterType = {
-  name: string,
-}
 
 export default function Syndicates() {
   const [update, setUpdate] = useState<boolean>()
   const [loading, setLoading] = useState<boolean>()
-  const [allSyndicates, setAllSyndicates] = useState<ISyndicates[]>()
+  const [allSyndicates, setAllSyndicates] = useState<ISyndicate[]>()
   const navigation = useNavigation<any>()
 
   useEffect(() => {
