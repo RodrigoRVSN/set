@@ -12,7 +12,7 @@ import ISyndicate from "./types";
 export default function Syndicates() {
   const [update, setUpdate] = useState<boolean>()
   const [loading, setLoading] = useState<boolean>()
-  const [allSyndicates, setAllSyndicates] = useState<ISyndicate[]>()
+  const [allSyndicates, setAllSyndicates] = useState<ISyndicate[]>([])
   const navigation = useNavigation<any>()
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function Syndicates() {
       <Animatable.View
         delay={600}
         animation='fadeInUp'
-        style={{ ...styles.mainContainer, justifyContent: loading || !allSyndicates ? 'center' : 'flex-start' }}
+        style={{ ...styles.mainContainer, justifyContent: loading || !allSyndicates.length ? 'center' : 'flex-start' }}
       >
 
         <TouchableOpacity

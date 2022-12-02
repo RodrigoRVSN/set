@@ -15,7 +15,7 @@ const Routes: React.FC = () => {
       </View>
     )
   }
-  return signed ? <AppRoutes/> : <AuthRoutes />
+  return !signed ? <AppRoutes/> : <AuthRoutes />
 }
 
 export default Routes
