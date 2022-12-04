@@ -12,9 +12,6 @@
 
 # 📙 University project of sustainability
 
-<br>
-
-___
 ## 🔨 Tools:
 
 - React Native
