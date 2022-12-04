@@ -1,8 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, ActivityIndicator, FlatList, TextInput } from "react-native";
-import * as Animatable from 'react-native-animatable'
-import { commonStyles } from "../../../Styles/commonStyles";
 import { selectButton, styles } from "./styles";
 import { condominiums } from "../consumer";
 import { Controller, useForm } from "react-hook-form";
@@ -35,7 +33,7 @@ export default function CondominiumRegister() {
         redirectToList()
       }
     } catch (error) {
-      console.log(error)
+      console.log('erro: ',error.message)
     }
   }
 
@@ -52,6 +50,7 @@ export default function CondominiumRegister() {
     navigation.addListener('focus', () => setUpdate(!update))
 
   }, [update, navigation])
+
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Nome</Text>
@@ -99,9 +98,9 @@ export default function CondominiumRegister() {
             defaultButtonText='Selecionar Síndico'
             data={allSyndicates}
             buttonStyle={{ ...selectButton }}
-            onSelect={({ name }) => onChange(name)}
-            buttonTextAfterSelection={selectedItem => selectedItem.label}
-            rowTextForSelection={item => item.label}
+            onSelect={({ id }) => onChange(id)}
+            buttonTextAfterSelection={selectedItem => selectedItem.name}
+            rowTextForSelection={item => item.name}
           />
         )}
       />

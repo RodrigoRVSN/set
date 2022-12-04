@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { View, ActivityIndicator } from "react-native";
 import * as auth from '../services/Auth/auth'
+import api from "../services/Api/api";
 
 interface AuthContextData {
   signed: boolean,
@@ -32,6 +32,8 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await auth.signIn(email, password)
       setUser(response)
+
+      api.defaults.headers.post['Authorization'] = `Bearer ${response.access_token}`;
       // await AsyncStorage.setItem('@SETAuth:user', JSON.stringify(response.user))
     } catch (error) {
       console.log(error)
@@ -41,6 +43,7 @@ export const AuthProvider = ({ children }) => {
   function signOut() {
     setUser(null)
   }
+
   return (
     <AuthContext.Provider value={{ signed: !!user, user: {}, signIn, signOut, loading }}>
       {children}
