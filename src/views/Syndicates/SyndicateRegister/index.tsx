@@ -90,6 +90,25 @@ export default function SyndicateRegister() {
         <Text style={styles.errorText}>Senha obrigatória!</Text>
       )}
 
+        <Text style={styles.title}>Telefone</Text>
+        <Controller
+            control={control}
+            rules={{ required: true }}
+            name='phone'
+            render={({ field: { value, onChange } }) => (
+                <TextInput
+                    keyboardType='numeric'
+                    placeholder='Digite o telefone'
+                    style={styles.input}
+                    value={value}
+                    onChangeText={onChange}
+                />
+            )}
+        />
+        {errors?.phone && (
+            <Text style={styles.errorText}>Numero obrigatória!</Text>
+        )}
+
       <TouchableOpacity style={styles.button} disabled={!isValid && !isDirty} onPress={handleSubmit(handleCreate)}>
         <Text style={styles.buttonText} >
           Registrar

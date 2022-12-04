@@ -11,7 +11,7 @@ export const syndicates = {
       console.log(error)
     }
   },
-  create: async (data: ISyndicate ) => {
+  create: async (data: ISyndicate) => {
     try {
       const response = await api.post('/user/register', {...data, role:'SYNDICATE'})
       return response.data
