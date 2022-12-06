@@ -18,9 +18,9 @@ export default function SignIn({ navigation }) {
   } = useForm<FormData>()
   const { signIn } = useAuth()
 
-  const handleSignIn = (data: FormData) => {
+  const handleSignIn = async (data: FormData) => {
     const { email, password } = data
-    if (email && password) signIn(email, password)
+    if (email && password) await signIn(email, password)
   }
 
   return (
@@ -63,8 +63,8 @@ export default function SignIn({ navigation }) {
         <Text style={styles.errorText}>Senha obrigatória!</Text>
       )}
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText} onPress={handleSubmit(handleSignIn)}>
+      <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignIn)}>
+        <Text style={styles.buttonText}>
           Login
         </Text>
       </TouchableOpacity>

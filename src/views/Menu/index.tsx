@@ -1,8 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import * as Animatable from 'react-native-animatable'
-import { TouchableOpacity } from "react-native-gesture-handler";
 import Header from "../../components/Header";
 import { useAuth } from "../../contexts/auth";
 import { commonStyles } from "../../Styles/commonStyles";
@@ -40,10 +39,9 @@ export default function Menu() {
             )}
           />
         </View>
-        <TouchableOpacity style={styles.logoutButton}>
+        <TouchableOpacity style={styles.logoutButton} onPress={signOut}>
           <Text
             style={styles.logoutButtonText}
-            onPress={() => signOut()}
           >
             Sair
           </Text>
